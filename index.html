@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Training</title>
+
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial; line-height: 1.5; font-size:12px}
+
+/* Highlight active link */
+.sidebar a.active-link {
+  background: #444;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 100vh;
+  background: #111;
+  color: white;
+  padding: 20px 15px;
+}
+
+.sidebar h2 { margin: 0 0 5px 0; }
+.sidebar h3 { margin: 20px 0 0px; font-size: 12px; }
+.sidebar a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  padding: 0px 5px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.sidebar a:hover { background: #CBDBB4; color: black; }
+
+/* Content */
+.content { margin-left: 180px; margin-right:50px; padding:20px 5px 5px 5px; margin-bottom:100px }
+.section { display: none; max-width: 600px; }
+.section.active { display: block; }
+h2 { margin-top: 0; }
+
+ul, ol {
+  margin-left: 10px; /* default is usually 40px */
+  padding-left: 10px;
+}
+
+ul ul, ol ul, ul ol, ol ol {
+  margin-left: 10px; /* reduce nested list indent */
+  padding-left: 10px;
+}
+
+
+  li.active {
+    background-color: #CBDBB4;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" style="user-select:none">
+  <h2>Training</h2>
+
+  <h3>Overview</h3>
+  <a onclick="showSection('welcome')">Welcome</a>
+
+  <h3>How to Get RX</h3>
+  <a onclick="showSection('rx-current')">Current</a>
+  <a onclick="showSection('rx-new')">New</a>
+
+  <h3>Contact Lenses</h3>
+  <a onclick="showSection('cl-sales')">Sales</a>
+  <a onclick="showSection('cl-order')">Order</a>
+  <a onclick="showSection('cl-fulfill')">Fulfill</a>
+
+  <h3>Glasses</h3>
+  <a onclick="showSection('gl-sales')">Sales</a>
+  <a onclick="showSection('gl-order')">Order</a>
+  <a onclick="showSection('gl-fulfill')">FulFill</a>
+
+</div>
+
+
+<!-- Content -->
+<div class="content">
+
+  <div id="welcome" class="section active">
+    <h2>Welcome</h2>
+    <p>Scope of Work:</p>
+<ol>
+<li> To be able to handle lensmeter reading. </li>
+<li> To be able to handle vector refraction. </li>
+<li> To be able to handle base refraction. </li>
+<br>
+
+<li> To be able to handle contact lens sales, order and fulfill. </li>
+<li> To be able to handle glasses sales, order and fulfill. </li>
+<li> To be able to handle glasses adjustment task. </li>
+<br>
+
+<li> To be able to key in data into our POS system and gmail. </li>
+<li> To be able to write in customer sales and prescription forms. </li>
+<li> To be able to key in supplier purchases information. </li>
+</ol>
+
+<br>---<br>
+Click below to View Our Apps
+<ul>
+  <li><a href="https://sp-rx.github.io/CL-SELECTOR/" target="_blank" style="text-decoration: underline; color: black;">Contact Lens App</a></li>
+  <li><a href="https://sp-rx.github.io/rod/" target="_blank" style="text-decoration: underline; color: black;">Rodenstock Lens Selector</a></li>
+  <li><a href="https://sp-rx.github.io/OL-selector/" target="_blank" style="text-decoration: underline; color: black;">Ophthalmic Lens Selector</a></li>
+  <li><a href="https://sp-rx.github.io/super_rx/" target="_blank" style="text-decoration: underline; color: black;">SP-RX Eye Exam</a></li>
+  <li><a href="https://sp-rx.github.io/acuvue_astig_rotator/" target="_blank" style="text-decoration: underline; color: black;">Acuvue Astig Rotator</a></li>
+  <li><a href="https://sp-rx.github.io/trainer_light/" target="_blank" style="text-decoration: underline; color: black;">FC DC Simulator</a></li>
+  <li><a href="https://sp-rx.github.io/mobile_FCDC/" target="_blank" style="text-decoration: underline; color: black;">FC DC iPad</a></li>
+  <li><a href="https://sp-rx.github.io/Trainer/" target="_blank" style="text-decoration: underline; color: black;">Subjective RX Trainer</a></li>
+</ul>
+
+  </div>
+
+<div id="rx-current" class="section">
+  <h2>Current Prescription</h2>
+ Ask what prescription they currently use. There are a few ways to get the info:
+      <ol>
+        <li>Customer provides details (photo or documents)</li>
+<li>
+  Use the lensmeter to check current glasses
+<ul>
+    <li><b>Single vision:</b> Center the lens and record sphere, cylinder, axis</li>
+    <li><b>Multifocal:</b> Plot the zone, then check power of distance zone. Read engraving for Near power.</li>
+  </ul>
+
+</li>
+        <li>If existing customer, check Gmail record by WhatsApp number or name</li>
+        <li>If existing customer, check POS system record by WhatsApp number or name</li>
+      </ol>
+</div>
+
+<div id="rx-new" class="section">
+  <h2>New Prescription</h2>
+Firstly, find out if a current prescription exist (it can be old but so long usable)
+<ol>
+  <li>If a current RX exists, use it as the base and proceed with Vector RX.</li>
+  <li>If no current RX, do a base prescription using retinoscopy or a Snellen chart, then proceed with Vector RX.</li>
+  <li>Vector RX can either be done as double eye or single eye, depending on the requirement of the test.</li>
+
+</ol>
+
+
+</div>
+
+
+
+  <!-- Contact Lens Sections -->
+  <div id="cl-sales" class="section">
+    <h2>Contact Lenses Sales</h2>
+  There are 2 types of contact lens sale: <b>Urgent and Not Urgent.</b>
+<ul>
+
+  <li><b>Urgent Sale, ready-stock only.</b>
+    <ol>
+      <li>Ask what prescription they currently use. There are few ways to get the info:
+        <ul>
+          <li>Customer provides details (photo or physical pack)</li>
+          <li>Use lensmeter if they are wearing glasses. Then use our app to convert the power to contact lens.</li>
+          <li>Perform a quick eye test.</li>
+          <li>If existing customer, check Gmail record by whatsapp number or name.</li>
+          <li>If existing customer, check POS System record by whatsapp number or name.</li>
+
+        </ul>
+      </li>
+      <li>Ask preferences:
+        <ul>
+          <li>Daily or Monthly disposable</li>
+          <li>Clear or Coloured</li>
+        </ul>
+      </li>
+      <li>Match to product & check stock:
+        <ul>
+          <li>Daily Clear Acuvue Oasys 1 day Hydraluxe</li>
+          <li>Daily Colour Acuvue Define for big pack</li>
+          <li>Daily Colour Seed Eye Coffret for small pack</li>
+          <li>Monthly Clear Acuvue Vita</li>
+          <li>Biweekly Clear Acuvue Oasys 2 weeks</li>
+          <li>Monthly Colour Bliss (high performance & comfort)</li>
+          <li>Monthly Colour Icoloris (basic performance & comfort)</li>
+        </ul>
+      </li>
+      <li>Use app to check price. </li>
+	<li>Make Payment: Credit Card, QR, or Cash</li>
+	<li>Send Receipt via whatsapp</li>
+      <li>Create customer details in system, use our app to send:
+        <ul>
+          <li>Take photo</li>
+          <li>Send details via Gmail with price, product, notes</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+<br>
+ <li><b>Not Urgent Sale</b>
+  <ol>
+    <li>Ask if customer has a preferred brand or type.
+      <ul>
+        <li>Customer can provide photos or details of their current lenses.</li>
+      </ul>
+    </li>
+    <li>Check if the requested product is in stock:
+      <ul>
+        <li>If yes → follow the Urgent Sale flow (ready-stock only).</li>
+        <li>If no → show product options via app and double-check product, quantity, and price.</li>
+      </ul>
+    </li>
+<li>Ask what prescription they currently use. There are few ways to get the info:
+        <ul>
+          <li>Customer provides details (photo or physical pack)</li>
+          <li>Use lensmeter if they are wearing glasses. Then use our app to convert the power to contact lens.</li>
+          <li>Perform a quick eye test.</li>
+          <li>If existing customer, check Gmail record by whatsapp number or name.</li>
+          <li>If existing customer, check POS System record by whatsapp number or name.</li>
+</ul>
+    <li>Take payment first to confirm the order (Credit Card, QR, or Cash).</li>
+    <li>Record customer details in system:
+      <ul>
+        <li>Prescription, brand, quantity, price, and any notes.</li></ul>
+<li>Proceed to order</li>
+      </ul>
+    </li>
+  </ol>
+</li>
+</ol>
+
+
+  </div>
+
+
+  <div id="cl-order" class="section">
+<h2>Contact Lenses Order</h2>
+
+   1. Placing order differs by supplier. If unsure of the product's name and brand, refer to our contact lenses app. <a href="https://sp-rx.github.io/CL-SELECTOR/" target="_blank" rel="noopener noreferrer">https://sp-rx.github.io/CL-SELECTOR/</a>
+    <ul>
+      <li>
+        Johnson & Johnson Acuvue via Acuvue platform on internet browser:
+        <ul>
+          <li>Select the correct product and description. Be careful: Oasys Hydraluxe = 1-day, Oasys Hydraclear = 2-week disposable.</li>
+          <li>Always check with management for approval before ordering Revenue Box. Prioritize ordering Trial first.</li>
+          <li>Double-check prescription and labeling. Include both eyes’ prescription and name as reference in a row (e.g., "Ahmad 160 // 180"). Use one unique number from each eye as reference for easier sorting.</li>
+          <li>Leave remarks on every page to make future record tracing easier.</li>
+        </ul>
+      </li><br>
+
+      <li>
+        Alcon via email on internet browser:
+        <ul>
+          <li>Create new email to my.visioncare@alcon.com.</li>
+          <li>Manually type product and quantity.</li>
+          <li>Double-check prescription and right/left labeling.</li>
+          <li>Seek management approval before ordering.</li>
+          <li>Use the signature option to select Alcon so the email auto-fills with account details, address, etc.</li>
+        </ul>
+      </li><br>
+
+      <li>
+        Bionics via WhatsApp:
+        <ul>
+	<li>Search for 'Bionics Customer Service' contact in the whatsapp</li>
+          <li>Send order as a message including name as reference, product, quantity, and right/left prescription labeling.</li>
+        </ul>
+      </li><br>
+
+      <li>
+        Seed products via WhatsApp:
+        <ul>
+	<li>Search for 'Seed Malaysia Khen' contact in the whatsapp</li>
+          <li>Send order as a message including name as reference, product, quantity, and right/left prescription labeling.</li>
+        </ul>
+      </li><br>
+
+	<li>
+        Cooper Vision Biofinity products via WhatsApp:
+        <ul>
+	<li>Search for 'TOH KEE WAI' contact in the whatsapp</li>
+          <li>Send order as a message including name as reference, product, quantity, and right/left prescription labeling.</li>
+        </ul>
+      </li>
+    </ul>
+
+<br>
+2. After placing order:
+    <ul>
+      <li>Create an order ticket in the POS system</li>
+      <li>Prepare a physical paper copy and place it in the pending clipboard</li>
+      <li>Include:
+        <ul>
+          <li>Customer name</li>
+          <li>Product</li>
+          <li>Quantity</li>
+          <li>Prescription</li>
+          <li>Total amount paid</li>
+          <li>Total amount unpaid</li>
+        </ul>
+      </li>
+    </ul>
+
+  
+
+  </div>
+
+<div id="cl-fulfill" class="section"> 
+  <h2>Contact Lenses Fulfill</h2> 
+  <ul>
+    <li>When orders arrive:
+      <ul>
+        <li>Use the order ticket or physical paper to match products to the correct customer</li>
+        <li>Pack the items accordingly</li>
+        <li>Notify the customer that their order has arrived</li>
+        <li>Place the packed order in storage</li>
+      </ul>
+    </li>
+    <li>If order is partial:
+      <ul>
+        <li>Inform the customer that only part of the order has arrived</li>
+        <li>Let the customer decide whether to collect first or wait</li>
+        <li>Update both the ticket and physical paper to reflect pending items</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+  <!-- Glasses Sections -->
+  <div id="gl-overview" class="section">
+    <h2>Glasses Overview</h2>
+    <ol>
+      <li>Sales</li>
+      <li>Refraction</li>
+      <li>Order</li>
+      <li>Delivery</li>
+    </ol>
+  </div>
+
+  <div id="gl-sales" class="section">
+    <h2>Glasses: Sales</h2>
+    <ul>
+      <li>Greet customer</li>
+      <li>Ask prescription</li>
+      <li>Check frame preference</li>
+    </ul>
+  </div>
+
+  <div id="gl-refraction" class="section">
+    <h2>Glasses: Refraction</h2>
+    <ul>
+      <li>Measure prescription</li>
+      <li>Check comfort & clarity</li>
+    </ul>
+  </div>
+
+  <div id="gl-order" class="section">
+    <h2>Glasses: Order</h2>
+    <ul>
+      <li>Check stock</li>
+      <li>Place order</li>
+    </ul>
+  </div>
+
+  <div id="gl-delivery" class="section">
+    <h2>Glasses: Delivery</h2>
+    <ul>
+      <li>Confirm satisfaction</li>
+      <li>Handover to customer</li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+function showSection(id) {
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+<script>
+function showSection(id) {
+  // Hide all sections
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(sec => sec.classList.remove('active'));
+  
+  // Show clicked section
+  document.getElementById(id).classList.add('active');
+
+  // Remove active class from all sidebar links
+  const links = document.querySelectorAll('.sidebar a');
+  links.forEach(link => link.classList.remove('active-link'));
+
+  // Add active class to the clicked link
+  const clickedLink = document.querySelector(`.sidebar a[onclick="showSection('${id}')"]`);
+  if(clickedLink) clickedLink.classList.add('active-link');
+}
+</script>
+
+
+
+<script>
+  document.addEventListener("click", function(e) {
+    const li = e.target.closest("li");
+    if (!li) return;
+
+    li.classList.toggle("active");
+  });
+</script>
+
+
+</body>
+</html>
