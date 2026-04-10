@@ -14,6 +14,9 @@ body { margin: 0; font-family: Arial; line-height: 1.5; font-size:12px}
   color: #fff;
   font-weight: bold;
 }
+  ul {
+    list-style-type: lower-alpha;
+  }
 
 /* Sidebar */
 .sidebar {
@@ -75,6 +78,7 @@ ul ul, ol ul, ul ol, ol ol {
   <h3>How to Get RX</h3>
   <a onclick="showSection('rx-current')">Current</a>
   <a onclick="showSection('rx-new')">New</a>
+  <a onclick="showSection('rx-type')">Eye Exam Types</a>
 
   <h3>Contact Lenses</h3>
   <a onclick="showSection('cl-sales')">Sales</a>
@@ -83,6 +87,7 @@ ul ul, ol ul, ul ol, ol ol {
 
   <h3>Glasses</h3>
   <a onclick="showSection('gl-sales')">Sales</a>
+  <a onclick="showSection('gl-fitting')">Fitting</a>
   <a onclick="showSection('gl-order')">Order</a>
   <a onclick="showSection('gl-fulfill')">FulFill</a>
 
@@ -95,34 +100,39 @@ ul ul, ol ul, ul ol, ol ol {
   <div id="welcome" class="section active">
     <h2>Welcome</h2>
     <p>Scope of Work:</p>
-<ol>
+
+<ol><li>Prescription Related</li>
+<ul>
 <li> To be able to handle lensmeter reading. </li>
 <li> To be able to handle vector refraction. </li>
 <li> To be able to handle base refraction. </li>
+</ul>
 <br>
-
+<li>Product related</li>
+<ul>
 <li> To be able to handle contact lens sales, order and fulfill. </li>
 <li> To be able to handle glasses sales, order and fulfill. </li>
 <li> To be able to handle glasses adjustment task. </li>
+</ul>
 <br>
-
+<li>Support related</li>
+<ul>
 <li> To be able to key in data into our POS system and gmail. </li>
 <li> To be able to write in customer sales and prescription forms. </li>
 <li> To be able to key in supplier purchases information. </li>
+</ul>
 </ol>
 
-<br>---<br>
-Click below to View Our Apps
+- - -<br><br>
+<i>Click below to View Our Apps
 <ul>
-  <li><a href="https://sp-rx.github.io/CL-SELECTOR/" target="_blank" style="text-decoration: underline; color: black;">Contact Lens App</a></li>
-  <li><a href="https://sp-rx.github.io/rod/" target="_blank" style="text-decoration: underline; color: black;">Rodenstock Lens Selector</a></li>
+  <li><a href="https://sp-rx.github.io/CL-SELECTOR/" target="_blank" style="text-decoration: underline; color: black;">Contact Lens Directory App</a></li>
   <li><a href="https://sp-rx.github.io/OL-selector/" target="_blank" style="text-decoration: underline; color: black;">Ophthalmic Lens Selector</a></li>
-  <li><a href="https://sp-rx.github.io/super_rx/" target="_blank" style="text-decoration: underline; color: black;">SP-RX Eye Exam</a></li>
-  <li><a href="https://sp-rx.github.io/acuvue_astig_rotator/" target="_blank" style="text-decoration: underline; color: black;">Acuvue Astig Rotator</a></li>
-  <li><a href="https://sp-rx.github.io/trainer_light/" target="_blank" style="text-decoration: underline; color: black;">FC DC Simulator</a></li>
-  <li><a href="https://sp-rx.github.io/mobile_FCDC/" target="_blank" style="text-decoration: underline; color: black;">FC DC iPad</a></li>
-  <li><a href="https://sp-rx.github.io/Trainer/" target="_blank" style="text-decoration: underline; color: black;">Subjective RX Trainer</a></li>
-</ul>
+  <li><a href="https://sp-rx.github.io/super_rx/" target="_blank" style="text-decoration: underline; color: black;">Vector RX Eye Exam</a></li>
+  <li><a href="https://sp-rx.github.io/trainer_light/" target="_blank" style="text-decoration: underline; color: black;">Sphere & Astig Simulator</a></li>
+  <li><a href="https://sp-rx.github.io/mobile_FCDC/" target="_blank" style="text-decoration: underline; color: black;">Near Vision Add Exam</a></li>
+  <li><a href="https://sp-rx.github.io/Trainer/" target="_blank" style="text-decoration: underline; color: black;">Eye Exam Trainer</a></li>
+</ul></i>
 
   </div>
 
@@ -151,6 +161,41 @@ Firstly, find out if a current prescription exist (it can be old but so long usa
   <li>If a current RX exists, use it as the base and proceed with Vector RX.</li>
   <li>If no current RX, do a base prescription using retinoscopy or a Snellen chart, then proceed with Vector RX.</li>
   <li>Vector RX can either be done as double eye or single eye, depending on the requirement of the test.</li>
+
+</ol>
+
+
+</div>
+
+<div id="rx-type" class="section">
+  <h2>Eye Exam Types</h2>
+There are 2 types of eye exam:
+<ol>
+  <li>Base Refraction:
+    <ul class="alpha-list">
+      <li>A quick and simple estimation of prescription</li>
+      <li>Done using a Snellen chart or retinoscopy</li>
+      <li>Takes less than 2 minutes</li>
+      <li>Typically accurate up to about 90% vision</li>
+    </ul>
+  </li>
+
+  <li>Vector Refraction:
+    <ul class="alpha-list">
+      <li>Refines the base prescription to achieve maximum accuracy</li>
+      <li>Our in-house specialty test, not available elsewhere</li>
+      <li>Can be done monocular (single eye) or binocular (both eyes)</li>
+      <li>Provides the most comfortable and best possible vision outcome</li>
+    </ul>
+  </li>
+</ol>
+<br>- - -<br><br>
+Based on situation:
+<ol>
+  <li>If a current RX exists, use it as the base and proceed with Vector RX.</li>
+  <li>If no current RX, establish a base using retinoscopy or Snellen chart, then proceed with Vector RX.</li>
+  <li>Every customer needs to go through Vector RX to determine the prescription when vision is maximised.</li>
+  <li>But the final diagnosed prescription might be adjusted for special reasons depending on situations.</li>
 
 </ol>
 
@@ -316,7 +361,7 @@ Firstly, find out if a current prescription exist (it can be old but so long usa
 
 <div id="cl-fulfill" class="section"> 
   <h2>Contact Lenses Fulfill</h2> 
-  <ul>
+  <ol>
     <li>When orders arrive:
       <ul>
         <li>Use the order ticket or physical paper to match products to the correct customer</li>
@@ -325,6 +370,7 @@ Firstly, find out if a current prescription exist (it can be old but so long usa
         <li>Place the packed order in storage</li>
       </ul>
     </li>
+
     <li>If order is partial:
       <ul>
         <li>Inform the customer that only part of the order has arrived</li>
@@ -332,52 +378,174 @@ Firstly, find out if a current prescription exist (it can be old but so long usa
         <li>Update both the ticket and physical paper to reflect pending items</li>
       </ul>
     </li>
-  </ul>
+
+    <li>During collection:
+      <ul>
+        <li>Pass to customer and ensure bill and receipt is correctly paid.
+	</li>
+        <li>Update the ticket in the POS system to say it's collected.
+	</li>
+        <li>Dispose of the physical paper to avoid confusion.
+	</li>
+      </ul>
+    </li>
+
+
+
+
+  </ol>
 </div>
 
-  <!-- Glasses Sections -->
-  <div id="gl-overview" class="section">
-    <h2>Glasses Overview</h2>
-    <ol>
-      <li>Sales</li>
-      <li>Refraction</li>
-      <li>Order</li>
-      <li>Delivery</li>
-    </ol>
-  </div>
 
-  <div id="gl-sales" class="section">
-    <h2>Glasses: Sales</h2>
-    <ul>
-      <li>Greet customer</li>
-      <li>Ask prescription</li>
-      <li>Check frame preference</li>
-    </ul>
-  </div>
 
-  <div id="gl-refraction" class="section">
-    <h2>Glasses: Refraction</h2>
-    <ul>
-      <li>Measure prescription</li>
-      <li>Check comfort & clarity</li>
-    </ul>
-  </div>
 
-  <div id="gl-order" class="section">
-    <h2>Glasses: Order</h2>
-    <ul>
-      <li>Check stock</li>
-      <li>Place order</li>
-    </ul>
-  </div>
+<div id="gl-sales" class="section">
+  <h2>Glasses Sales</h2>
+  <ol>
+    <li>Understand why the customer wants to change glasses:
+      <ul>
+        <li>Badly made glasses</li>
+        <li>Scratched lenses</li>
+        <li>Vision getting worse</li>
+        <li>Dislike current frame design</li>
+        <li>Old glasses / time to change</li>
+      </ul>
 
-  <div id="gl-delivery" class="section">
-    <h2>Glasses: Delivery</h2>
-    <ul>
-      <li>Confirm satisfaction</li>
-      <li>Handover to customer</li>
-    </ul>
-  </div>
+     
+        <li>This determines whether prescription should be changed or maintained</li>
+     <ul>   
+	<li>If vision-related (badly made / vision worse) → allow more adjustment</li>
+        <li>If non-vision-related → maintain or adjust safely without disrupting current comfort</li>
+      </ul>
+    </li>
+
+    <li>Ask for current prescription:
+      <ul>
+        <li>Check existing glasses (lensmeter)</li>
+        <li>Check records (Gmail / POS)</li>
+        <li>If none → proceed to create the base prescription</li>
+      </ul>
+    </li>
+
+    <li>Select frame first before eye examination:
+      <ul>
+        <li>Fit, size, comfort</li>
+        <li>Face shape and preference</li>
+        <li>If customer wants eye exam first → inform that eye exam is chargeable if no glasses are made</li>
+</ul>
+
+<li>Proceed to eye examination.
+<ul><li>Start with base or create the base</li>
+<li>Then proceed with the vector RX</li>
+</ul></li>
+
+    </li>
+  </ol>
+</div>
+
+
+<div id="gl-fitting" class="section">
+  <h2>Glasses Fitting</h2>
+  After the eye examination, proceed to take fitting details.
+  
+  <ol>
+    <li>
+      Take measurements:
+      <ul>
+        <li>PD (pupil distance, the horizontal distance between both eyes)</li>
+        <li>NOC (nosepiece to optical center, the vertical distance from the optical center of the lens, or the pupil to the center of the nosepiece)</li>
+      </ul>
+    </li>
+
+    <li>
+      PD and NOC are critical for visual comfort.
+      <ul>
+        <li>Changes will affect how the customer perceives vision</li>
+        <li>Maintain as similar as possible to current glasses</li>
+        <li>Only adjust if there are complaints (e.g. headache, strain, dizziness when wearing the existing parameters)</li>
+      </ul>
+    </li>
+</ol>
+After the fitting is taken, proceed to recommending ophthalmic lens to suit the budget and performance.
+<ol><li>
+      Recommend lens using our Ophthalmic Lens app.
+      <ul>
+        <li>Key in the customer's prescription and the app will generate the recommendation.</li>
+      </ul>
+    </li>
+
+    <li>
+      Finalize lens choice:
+      <ul>
+        <li>Lens type (single vision, anti-fatigue, multifocal)</li>
+        <li>Coating / options</li>
+      </ul>
+    </li>
+
+    <li>Confirm price and proceed to payment</li>
+  </ol>
+</div>
+
+
+<div id="gl-order" class="section">
+  <h2>Glasses Order</h2>
+
+  <p>After payment is completed, the priority is proper record storage.</p>
+
+  <ol>
+    <li>Record and store order details:
+      <ul>
+        <li>Take a clear photo and upload to Gmail</li>
+        <li>Ensure the photo includes:
+          <ul>
+            <li>Prescription</li>
+            <li>Selected lens type</li>
+            <li>Payment status (paid / pending)</li>
+            <li>Frame details</li>
+            <li>Fitting measurements</li>
+            <li>Physical frame</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li>Place lens order:
+      <ul>
+        <li>Stock lenses: order via supplier order form</li>
+        <li>Custom lenses: order via online portal</li>
+        <li>Refer to upper management if unsure</li>
+        <li>Ensure Gmail record and POS ticket are created for reference</li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
+
+
+<div id="gl-fulfill" class="section">
+  <h2>Glasses Fulfill</h2>
+  <ol>
+    <li>When glasses arrive:
+      <ul>
+        <li>Match with order ticket</li>
+        <li>Check lens and frame accuracy</li>
+      </ul>
+    </li>
+    <li>Notify customer for collection</li>
+    <li>During collection:
+      <ul>
+        <li>Adjust frame fitting to check if it's tight or loose.</li>
+        <li>Check vision clarity</li>
+      </ul>
+    </li>
+    <li>Confirm satisfaction and handover</li>
+  </ol>
+</div>
+
+
+
+
+
 
 </div>
 
