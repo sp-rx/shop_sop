@@ -63,6 +63,51 @@ ul ul, ol ul, ul ol, ol ol {
   li.active {
     background-color: #CBDBB4;
   }
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.img-wrap {
+  position: relative;
+}
+
+.shop-img {
+  width: 100%;
+  display: block;
+}
+
+.img-label {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 10px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
 </style>
 </head>
 
@@ -74,6 +119,8 @@ ul ul, ol ul, ul ol, ol ol {
 
   <h3>Overview</h3>
   <a onclick="showSection('welcome')">Welcome</a>
+  <a onclick="showSection('landmarks')">Landmarks</a>
+
 
   <h3>How to Get RX</h3>
   <a onclick="showSection('rx-current')">Current</a>
@@ -135,7 +182,6 @@ ul ul, ol ul, ul ol, ol ol {
 </ol>
 
 
-
 - - -<br><br>
 <i>Click below to View Our Apps
 <ul>
@@ -148,6 +194,63 @@ ul ul, ol ul, ul ol, ol ol {
 </ul></i>
 
   </div>
+
+
+
+
+  <div id="landmarks" class="section">
+    <h2>Landmarks</h2>
+
+<div id="gallery"></div>
+
+<script>
+const container = document.getElementById("gallery");
+
+for (let i = 1; i <= 40; i++) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "img-wrap";
+
+  const img = document.createElement("img");
+  img.src = `https://raw.githubusercontent.com/sp-rx/shop_sop/main/temp/shop%20(${i}).jpeg`;
+  img.className = "shop-img";
+  img.onclick = () => openLightbox(img.src);
+
+  const label = document.createElement("span");
+  label.className = "img-label";
+  label.innerText = `shop (${i})`;
+
+  wrapper.appendChild(img);
+  wrapper.appendChild(label);
+  container.appendChild(wrapper);
+}
+</script>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').style.display = 'flex';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
 
 <div id="rx-current" class="section">
   <h2>Current Prescription</h2>
