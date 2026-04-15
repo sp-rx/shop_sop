@@ -64,7 +64,8 @@ ul ul, ol ul, ul ol, ol ol {
     background-color: #CBDBB4;
   }
 
-#gallery {
+.img-group {
+  margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
@@ -88,6 +89,10 @@ ul ul, ol ul, ul ol, ol ol {
   background: rgba(0,0,0,0.5);
   padding: 2px 6px;
   border-radius: 4px;
+}
+.title {
+font-size:14px;
+font-weight:700;
 }
 
 /* Lightbox */
@@ -200,13 +205,44 @@ ul ul, ol ul, ul ol, ol ol {
 
   <div id="landmarks" class="section">
     <h2>Landmarks</h2>
+<b>
+<span class="title">Front Counter</span>
+<div style="height:10px"></div>
+  <div id="frontcounter" class="img-group"></div>
 
-<div id="gallery"></div>
+<span class="title">Collection and Pending Area</span>
+<div style="height:10px"></div>
+  <div id="collection" class="img-group"></div>
 
+<span class="title">Eye Exam Room</span>
+<div style="height:10px"></div>
+  <div id="examroom" class="img-group"></div>
+
+<span class="title">Back Counter</span>
+<div style="height:10px"></div>
+  <div id="backcounter" class="img-group"></div>
+
+<span class="title">Software & Equipment</span>
+<div style="height:10px"></div>
+  <div id="software" class="img-group"></div>
+
+<span class="title">Paperwork</span>
+<div style="height:10px"></div>
+  <div id="paperwork" class="img-group"></div>
+
+</b>
 <script>
-const container = document.getElementById("gallery");
+const groups = {
+  frontcounter: [1,2,3,4,5,18,19,20,23,21],
+  collection: [12,10],
+  examroom: [11,13,14,15,16,27],
+  backcounter: [6,7,8,9,17,22],
+  software: [30,32,33,34,35,36,37,41,42,43,44,45,46,47,48],
+  paperwork: [25,26,28,29,31,38,39,40],
 
-for (let i = 1; i <= 40; i++) {
+};
+
+function createImage(i) {
   const wrapper = document.createElement("div");
   wrapper.className = "img-wrap";
 
@@ -217,13 +253,26 @@ for (let i = 1; i <= 40; i++) {
 
   const label = document.createElement("span");
   label.className = "img-label";
-  label.innerText = `shop (${i})`;
+  label.innerText = `${i}`;
 
   wrapper.appendChild(img);
   wrapper.appendChild(label);
-  container.appendChild(wrapper);
+
+  return wrapper;
 }
+
+// render each group
+Object.entries(groups).forEach(([groupId, numbers]) => {
+  const container = document.getElementById(groupId);
+
+  numbers.forEach(i => {
+    container.appendChild(createImage(i));
+  });
+});
 </script>
+
+
+
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img">
